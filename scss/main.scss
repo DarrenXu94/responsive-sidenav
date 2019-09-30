@@ -7,11 +7,12 @@ body {
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 100px;
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
   overflow: auto;
+  transition: 0.5s;
 
   li {
     display: block;
@@ -22,9 +23,13 @@ body {
 }
 
 .content {
-  margin-left: 200px;
-  padding: 1px 16px;
+  margin-left: 100px;
+  padding: 1px 0px;
   background-color: aliceblue;
+}
+
+#main {
+  transition: margin-left 0.5s;
 }
 
 @media screen and (max-width: 700px) {

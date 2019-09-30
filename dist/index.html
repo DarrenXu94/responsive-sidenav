@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="sidebar">
+    <div id="mySidebar" class="sidebar">
         <ul>
             <li>Something</li>
             <li>Something</li>
@@ -16,14 +16,39 @@
         </ul>
     </div>
 
-    <div class="content">
+    <div id="main" class="content">
         <h2>Responsive Sidebar Example</h2>
+        <button class="openbtn" onclick="toggleNav()">☰ Toggle Sidebar</button>
+
         <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px
             or less.</p>
         <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center
             the navigation links.</p>
-        <h3>Resize the browser window to see the effect.</h3>
     </div>
+
+    <script>
+        let state = "closed";
+
+        function toggleNav() {
+            if (state == "open") {
+                closeNav()
+                state = "closed"
+            } else {
+                openNav()
+                state = "open"
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "200px";
+            document.getElementById("main").style.marginLeft = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+        }
+    </script>
 
 </body>
 
